@@ -1,0 +1,73 @@
+﻿python 准备：
+    需要安装 库 sphinx 及其 依赖。
+    
+    我这里用的是 python 3.9
+    
+    确保 python.exe 所在的文件夹，在环境变量 path 中 的位置正确。
+    不确定的话，可以用 python.exe 的完整路径。
+    
+    升级，基本工具 pip 、setuptools、wheel 。
+    安装 sphinx 。
+    安装 jieba ，中文分词，搜索用的。可以不装，不装的话，中文搜索功能全废。
+    指令如下：
+        python -m pip install --upgrade pip
+        python -m pip install --upgrade setuptools
+        python -m pip install --upgrade wheel
+        python -m pip install --upgrade sphinx
+        python -m pip install --upgrade jieba
+    
+    如果觉得网络不好，可以临时换成国内的源：
+    比如清华的： https://pypi.tuna.tsinghua.edu.cn/simple
+    或者 别的 源 也一样的，把网址 换一下就行，
+    指令是这样子的：
+        python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip
+        python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade setuptools
+        python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade wheel
+        python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade sphinx
+        python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade jieba
+
+清理：文件夹 build ，如果有之前的残留文件，删除此文件夹。
+清理：文件夹 source\games ，如果有之前的残留文件，删除此文件夹。
+清理：文件 source\header.txt ，删除此文件。
+
+准备：command.dat 文件，放在 source\command.dat
+    确认是 utf-8 编码的
+
+进入 source 文件夹：生成 rst 源文件 等
+    A:
+        运行脚本：1__command_to_txt.py
+            生成文件：command.txt
+            此文件，已经把 原来的 command.dat 文件中的 特殊符号，
+            转换为 常规的字符了。
+    
+    B:
+        运行脚本：2__make_rst.py
+            生成文件夹： source\games ，以及 其中的 文件
+                games\*.rst
+                games\*\*.txt
+            生成文件：source\header.txt
+                这个就是 出招表的 文件头，可以手动检查一下，程序分割的有没有出错。
+
+回到主文件夹：生成 html 最终文件
+    确保 python.exe 所在的文件夹，在环境变量 path 中 的位置正确。
+    确保 Scripts 文件夹( 和 python.exe 在同一文件夹下 )，在环境变量 path 中 的位置正确。
+    我自己的话，会建一个 bat 文件，需要的时候，打开 bat ：
+        set path=c:\Users\aa\AppData\Local\Programs\Python\Python39\Scripts\;%path%
+        set path=c:\Users\aa\AppData\Local\Programs\Python\Python39\;%path%
+        cmd
+    这个，你可以参考，但，路径一般不太一样（就算都是默认安装位置、用户名也不一样）
+    
+    
+    环境变量 path ，正确了以后，很简单。
+    
+    
+    有个 make.bat 文件。
+    命仅行中 运行 它，并给个 参数 html ：
+        make.bat html
+    不出错的话
+    就会生成 html 格式的文件了
+    位于 build\html
+        
+        等待任务完成
+
+如果 自己 了解 sphinx-doc ，也可以自己做一些修改。
