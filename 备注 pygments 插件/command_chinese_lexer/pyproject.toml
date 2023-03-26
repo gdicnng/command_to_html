@@ -1,0 +1,6 @@
+[project]
+name = "command_chinese_lexer"
+version = "0.0.1"
+
+[project.entry-points."pygments.lexers"]
+command_chinese_lexer = "command_chinese_lexer:CustomLexer"

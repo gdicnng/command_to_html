@@ -1,0 +1,31 @@
+﻿pygments 插件 lexer
+	文件夹：command_chinese_lexer
+
+pip install --upgrade setuptools
+pip install --upgrade build
+python -m build 生成安装文件
+pip 安装
+麻烦啊
+
+
+
+pip install -e 文件夹路径
+直接从 源文件 文件夹 安装
+稍微好点，也烦麻
+
+
+另外：
+	脚本：command_chinese_lexer.py
+	
+	改 sys.path
+		import command_chinese_lexer
+		
+		from pygments.lexers import LEXERS
+		LEXERS["CustomLexer"] = ("command_chinese_lexer", "Command_Chinese", ("command_chinese",), (), ())		
+
+	##########		
+	##########		
+	##########		
+	https://github.com/pygments/pygments/issues/1096#issuecomment-1426809706
+	# I am using the following hack somewhere in my code:
+	#LEXERS["PigeonLexer"] = ("extensions.pygments", "Pigeon", ("pigeon",), (), ())		
