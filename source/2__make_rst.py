@@ -242,7 +242,7 @@ for number in sorted( game_info_start_line_number__set ):
                         n += 1
                     #print(title_string,file=f)
                     print("",file=f)
-                    print(file_content[number],file=f)
+                    print(file_content[number],file=f)# info=
                     print("",file=f)
                     print("",file=f)
 
@@ -251,7 +251,7 @@ for number in sorted( game_info_start_line_number__set ):
                     for the_key in the_key_list:
                         title_2_string=str(the_key)
                         if game_info_new[the_key]:
-                            if game_info_new[the_key][0]:
+                            if game_info_new[the_key][0].strip():
                                 title_2_string = game_info_new[the_key][0].strip()
                         # 小标题
                         print(title_2_string,file=f)
@@ -259,5 +259,5 @@ for number in sorted( game_info_start_line_number__set ):
                         print("",file=f)
                         # 引用内容
                         # .. literalinclude:: 1.txt
-                        print(r".. literalinclude:: " + first_game_name + "/" + str(the_key) + ".txt" ,file=f)
+                        print(r".. literalinclude:: " + first_game_name + "/" + str(the_key) + ".txt" ,file=f) # 全部用  first_game_name 中的内容
                         print("",file=f)

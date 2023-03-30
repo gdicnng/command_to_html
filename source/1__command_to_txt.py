@@ -70,19 +70,24 @@ replace_dict={
         r"_Z"        : r"Ｚ",
 
         r"_+"  : r"＋",#gb2312
-        r"_."  : r"…",
+        r"_."  : r"…",# 啥意思，不过 jjsnake 出扫表里没有
         r"_1"  : r"↙",
         r"_2"  : r"↓",
         r"_3"  : r"↘",
         r"_4"  : r"←",
-        r"_5"  : r"⊕", # gbk  ??? ############### ☉☉⊕⊕
+        r"_5"  : r"⊙", # ??? ⊙⊕
+        # 摇杆回中 ???
+        # 摇杆回中，用哪个符号？⊙⊕
+        # 两个
+        # ⊙ U+2299 CIRCLED DOT OPERATOR : direct product, vector pointing out of page
+        # ☉ ，U+2609 SUN : alchemical symbol for gold
         r"_6"  : r"→",
         r"_7"  : r"↖",
         r"_8"  : r"↑",
         r"_9"  : r"↗",
         r"_N"  : r"Ｎ", # # # # 
         
-        r"@BALL"  : r"⊕",# gbk  ??? ☉☉⊕⊕
+        r"@BALL"  : r"⊙",# ??? ☉☉⊕⊕
         
         r"_a" : r"①",# ① gb2312
         r"_b" : r"②",
@@ -153,15 +158,24 @@ replace_dict={
         r"@7player" : r"P7", #
         r"@8player" : r"P8", #
         
-        r"_`" : r"・",#gb2312
+        # ※
+        
+        # ・  在 gb2312  ，但不在 gbk 中 ????? ，U+30FB KATAKANA MIDDLE DOT 片假名？
+        # · gbk ,U+00B7 MIDDLE DOT : midpoint (in typography), Georgian comma, Greek middle dot (ano teleia)
+        r"_`" : r"·",
         r"_@" : r"◎",#gb2312
-        r"_)" : r"○",#gb2312
+        r"_)" : r"○",#gb2312 ：# ○，U+25CB WHITE CIRCLE# 还有个 零〇 长得一样
         r"_(" : r"●",#gb2312
         r"_*" : r"☆",#gb2312
         r"_&" : r"★",#gb2312
         r"_%" : r"△",#gb2312
         r"_$" : r"▲",#gb2312
-        r"_#" : r"",       #gbk 里有 ，没有 ▣ ,▣ 25a3 ,回字 ？
+        r"_#" : r"∷",
+        # 回字形状
+        # 双重 正方形，楷体里没有，换一个算了
+        # gbk 里有这个： ，没有 ▣ ,▣ 25a3 
+        #### jjsnake 出招表中，好像没有用这个，正好
+        # 〓＃▓∷
         r"_]" : r"□",#gb2312
         r"_[" : r"■",#gb2312
         r"_{" : r"▽",       #gbk
@@ -260,6 +274,8 @@ replace_dict={
         r"_^" : r"空中",# _^
 
         }
+
+
 
 # 字符替换
 def line_replace(line):

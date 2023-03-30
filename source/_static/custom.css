@@ -1,9 +1,13 @@
-body {
-    font-size: 20px;
+/* 出招表内容处 */
+pre{
+	line-height: 100%;
+	font-family: KaiTi,SimSun,NSimSun,SimHei;
+	/*font-size: 1.1em;*/
+	font-size: 22px;
 }
 
-pre,code{
-    font-family: KaiTi,NSimSun,SimSun,SimHei;
-    font-size: 1.1em;
-    line-height: 100%;
-}
+/* 高亮颜色 、粗体*/
+.highlight .k  { color: #E40000; font-weight: bold } /* Keyword ◎○●☆★△▲∷□■▽▼◇◆·※ */
+.highlight .o  { color: #008000; font-weight: bold } /* Operator   ↖↑↗←→↙↓↘⊙ */
+.highlight .ow { color: #0000ff; font-weight: bold } /* Operator.Word   Ａ-Ｚ */
+.highlight .m  { color: #9400D3; font-weight: bold } /* Literal.Number   ①-⑩ */
